@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SubliStyle - Inicio de sesión para la tienda de franelas personalizadas y sublimación">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>SubliStyle | Iniciar Sesión</title>
+</head>
+
+<body class="login-page">
+    <!-- Animated background particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Floating glow orbs -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+
+    <div class="login-container">
+        <!-- Left branding panel -->
+        <div class="login-branding">
+            <div class="brand-content">
+                <div class="brand-logo">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <path d="M25 5L35 15H30V30H20V15H15L25 5Z" fill="#00b7ff" opacity="0.8" />
+                        <path d="M15 35H35V40C35 42.76 32.76 45 30 45H20C17.24 45 15 42.76 15 40V35Z" fill="#00b7ff" />
+                        <circle cx="25" cy="22" r="4" fill="#ffffff" opacity="0.9" />
+                    </svg>
+                </div>
+                <h1 class="brand-name">SubliStyle</h1>
+                <p class="brand-tagline">Franelas Personalizadas & Sublimación</p>
+                <div class="brand-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✨</span>
+                        <span>Diseños Únicos</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <span>Sublimación Premium</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🚀</span>
+                        <span>Entrega Rápida</span>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-decoration">
+                <div class="deco-circle deco-circle-1"></div>
+                <div class="deco-circle deco-circle-2"></div>
+                <div class="deco-circle deco-circle-3"></div>
+            </div>
+        </div>
+
+        <!-- Right login form -->
+        <div class="login-form-wrapper">
+            <div class="form-body">
+                <div class="avatar-container">
+                    <img src="img/images.jfif" alt="User login" id="login-avatar">
+                    <div class="avatar-ring"></div>
+                </div>
+                <p class="text">¡ Bienvenido Carlos !</p>
+                <p class="text-sub">Ingresa a tu cuenta para continuar</p>
+                <form class="login-form" id="loginForm">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00b7ff"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <input type="text" placeholder="Email o nombre de usuario" id="login-username" required>
+                        <div class="input-line"></div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00b7ff"
+                                stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </div>
+                        <input type="password" placeholder="Ingrese la contraseña" id="login-password" required>
+                        <div class="input-line"></div>
+                        <button type="button" class="toggle-password" id="togglePassword"
+                            aria-label="Mostrar contraseña">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8899a6"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Recordarme
+                        </label>
+                        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <button type="submit" id="loginBtn">
+                        <span class="btn-text">Iniciar Sesión</span>
+                        <span class="btn-loader" style="display:none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" class="spinner">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="#fff" stroke-width="3"
+                                    stroke-dasharray="31.4" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+                <div class="form-footer">
+                    <p>¿No tienes cuenta? <a href="#" class="signup-link">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== Particle Background =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.color = Math.random() > 0.5 ? '#00b7ff' : '#ffffff';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = '#00b7ff';
+                        ctx.globalAlpha = 0.05 * (1 - dist / 120);
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ===== Toggle Password =====
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const pw = document.getElementById('login-password');
+            pw.type = pw.type === 'password' ? 'text' : 'password';
+        });
+
+        // ===== Login Handler =====
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('loginBtn');
+            const btnText = btn.querySelector('.btn-text');
+            const btnLoader = btn.querySelector('.btn-loader');
+
+            btn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-flex';
+            btn.classList.add('loading');
+
+            setTimeout(() => {
+                window.location.href = 'tienda.html';
+            }, 1500);
+        });
+
+        // ===== Input focus animations =====
+        document.querySelectorAll('.input-group input').forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+            });
+            input.addEventListener('blur', function () {
+                if (!this.value) this.parentElement.classList.remove('focused');
+            });
+        });
+    </script>
+</body>
+
+</html>

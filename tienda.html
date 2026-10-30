@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SubliStyle - Tienda de franelas personalizadas con sublimación. Diseños únicos, calidad premium.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <title>SubliStyle | Tienda de Franelas Personalizadas</title>
+</head>
+
+<body class="store-page">
+    <!-- Animated background particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Floating glow orbs -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-brand">
+            <div class="nav-logo">
+                <svg width="24" height="24" viewBox="0 0 50 50" fill="none">
+                    <path d="M25 5L35 15H30V30H20V15H15L25 5Z" fill="#00b7ff" opacity="0.8" />
+                    <path d="M15 35H35V40C35 42.76 32.76 45 30 45H20C17.24 45 15 42.76 15 40V35Z" fill="#00b7ff" />
+                    <circle cx="25" cy="22" r="4" fill="#ffffff" opacity="0.9" />
+                </svg>
+            </div>
+            <span class="nav-title">SubliStyle</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#categorias">Categorías</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="nav-cart" id="cartBtn" aria-label="Carrito de compras">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <div class="nav-user">
+                <img src="img/images.jfif" alt="Carlos">
+                <span class="nav-user-name">Carlos</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <div class="hero-badge">
+            <span>🔥</span> Nueva Colección Disponible
+        </div>
+        <h1>Diseños que <span class="accent">Inspiran</span>,<br>Franelas que <span class="accent">Enamoran</span></h1>
+        <p>Creamos franelas personalizadas con sublimación de alta calidad. Cada diseño es único, vibrante y duradero.
+            ¡Expresa tu estilo!</p>
+        <div class="hero-buttons">
+            <a href="#productos" class="btn-primary">
+                Ver Catálogo
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+            <a href="#contacto" class="btn-secondary">
+                Diseño Personalizado
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number" id="stat1">0</span>
+            <span class="stat-label">Clientes Felices</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="stat2">0</span>
+            <span class="stat-label">Diseños Creados</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="stat3">0</span>
+            <span class="stat-label">Años de Experiencia</span>
+        </div>
+    </div>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="categories-section" id="categorias">
+        <div class="section-header">
+            <h2>Nuestras <span class="accent">Categorías</span></h2>
+            <p>Explora nuestra variedad de estilos y encuentra el diseño perfecto para ti</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card" data-category="galaxia">
+                <span class="category-icon">🌌</span>
+                <h3 class="category-name">Galaxia</h3>
+                <span class="category-count">12 diseños</span>
+            </div>
+            <div class="category-card" data-category="tropical">
+                <span class="category-icon">🌿</span>
+                <h3 class="category-name">Tropical</h3>
+                <span class="category-count">8 diseños</span>
+            </div>
+            <div class="category-card" data-category="geometrico">
+                <span class="category-icon">💎</span>
+                <h3 class="category-name">Geométrico</h3>
+                <span class="category-count">15 diseños</span>
+            </div>
+            <div class="category-card" data-category="deportivo">
+                <span class="category-icon">⚡</span>
+                <h3 class="category-name">Deportivo</h3>
+                <span class="category-count">10 diseños</span>
+            </div>
+            <div class="category-card" data-category="urbano">
+                <span class="category-icon">🎨</span>
+                <h3 class="category-name">Urbano</h3>
+                <span class="category-count">9 diseños</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products-section" id="productos">
+        <div class="section-header">
+            <h2>Productos <span class="accent">Destacados</span></h2>
+            <p>Las franelas más populares con sublimación de la mejor calidad</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Product 1 -->
+            <article class="product-card" data-product-id="1">
+                <span class="product-badge new">Nuevo</span>
+                <div class="product-image">
+                    <img src="img/tshirt_galaxy.jpg" alt="Franela Galaxia Nebulosa" loading="lazy">
+                    <div class="product-overlay">
+                        <button class="overlay-btn" aria-label="Vista rápida" title="Vista rápida">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <button class="overlay-btn" aria-label="Favorito" title="Agregar a favoritos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Galaxia</span>
+                    <h3 class="product-name">Nebulosa Cósmica</h3>
+                    <p class="product-desc">Diseño sublimado con colores vibrantes del espacio profundo</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-current">$25.99</span>
+                            <span class="price-old">$32.99</span>
+                        </div>
+                        <div class="product-rating">
+                            ★★★★★ <span class="rating-count">(48)</span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart(1, 'Nebulosa Cósmica', 25.99, 'img/tshirt_galaxy.jpg')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="product-card" data-product-id="2">
+                <span class="product-badge">Popular</span>
+                <div class="product-image">
+                    <img src="img/tshirt_floral.jpg" alt="Franela Tropical Azul" loading="lazy">
+                    <div class="product-overlay">
+                        <button class="overlay-btn" aria-label="Vista rápida" title="Vista rápida">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <button class="overlay-btn" aria-label="Favorito" title="Agregar a favoritos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Tropical</span>
+                    <h3 class="product-name">Paraíso Tropical</h3>
+                    <p class="product-desc">Estampado floral tropical con tonos azules vibrantes</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-current">$22.99</span>
+                        </div>
+                        <div class="product-rating">
+                            ★★★★☆ <span class="rating-count">(36)</span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart(2, 'Paraíso Tropical', 22.99, 'img/tshirt_floral.jpg')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="product-card" data-product-id="3">
+                <span class="product-badge sale">-20%</span>
+                <div class="product-image">
+                    <img src="img/tshirt_geometric.jpg" alt="Franela Geométrica" loading="lazy">
+                    <div class="product-overlay">
+                        <button class="overlay-btn" aria-label="Vista rápida" title="Vista rápida">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <button class="overlay-btn" aria-label="Favorito" title="Agregar a favoritos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Geométrico</span>
+                    <h3 class="product-name">Prisma Diamante</h3>
+                    <p class="product-desc">Geometría abstracta con cristales azules sublimados</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-current">$19.99</span>
+                            <span class="price-old">$24.99</span>
+                        </div>
+                        <div class="product-rating">
+                            ★★★★★ <span class="rating-count">(52)</span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart(3, 'Prisma Diamante', 19.99, 'img/tshirt_geometric.jpg')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="product-card" data-product-id="4">
+                <span class="product-badge new">Nuevo</span>
+                <div class="product-image">
+                    <img src="img/tshirt_sport.jpg" alt="Franela Deportiva" loading="lazy">
+                    <div class="product-overlay">
+                        <button class="overlay-btn" aria-label="Vista rápida" title="Vista rápida">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <button class="overlay-btn" aria-label="Favorito" title="Agregar a favoritos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Deportivo</span>
+                    <h3 class="product-name">Splash Deportivo</h3>
+                    <p class="product-desc">Diseño dinámico con splash de colores eléctricos</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-current">$27.99</span>
+                        </div>
+                        <div class="product-rating">
+                            ★★★★★ <span class="rating-count">(41)</span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart(4, 'Splash Deportivo', 27.99, 'img/tshirt_sport.jpg')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 5 -->
+            <article class="product-card" data-product-id="5">
+                <span class="product-badge">Popular</span>
+                <div class="product-image">
+                    <img src="img/tshirt_urban.jpg" alt="Franela Urbana Graffiti" loading="lazy">
+                    <div class="product-overlay">
+                        <button class="overlay-btn" aria-label="Vista rápida" title="Vista rápida">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <button class="overlay-btn" aria-label="Favorito" title="Agregar a favoritos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Urbano</span>
+                    <h3 class="product-name">Street Art Azul</h3>
+                    <p class="product-desc">Arte callejero con graffiti en tonos azules intensos</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-current">$24.99</span>
+                            <span class="price-old">$29.99</span>
+                        </div>
+                        <div class="product-rating">
+                            ★★★★☆ <span class="rating-count">(33)</span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart(5, 'Street Art Azul', 24.99, 'img/tshirt_urban.jpg')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 6 -->
+            <article class="product-card" data-product-id="6">
+                <span class="product-badge sale">-15%</span>
+                <div class="product-image">
+                    <img src="img/tshirt_nature.jpg" alt="Franela Aurora Boreal" loading="lazy">
+                    <div class="product-overlay">
+                        <button class="overlay-btn" aria-label="Vista rápida" title="Vista rápida">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <button class="overlay-btn" aria-label="Favorito" title="Agregar a favoritos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Naturaleza</span>
+                    <h3 class="product-name">Aurora Boreal</h3>
+                    <p class="product-desc">Paisaje mágico con montañas y aurora boreal sublimada</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-current">$21.99</span>
+                            <span class="price-old">$25.99</span>
+                        </div>
+                        <div class="product-rating">
+                            ★★★★★ <span class="rating-count">(57)</span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart(6, 'Aurora Boreal', 21.99, 'img/tshirt_nature.jpg')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features-section">
+        <div class="section-header">
+            <h2>¿Por qué <span class="accent">Elegirnos</span>?</h2>
+            <p>Calidad, creatividad y dedicación en cada franela</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-card-icon">🎨</div>
+                <h3>Sublimación Premium</h3>
+                <p>Utilizamos la mejor tecnología de sublimación para colores vibrantes que no se desvanecen con los
+                    lavados</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-icon">✂️</div>
+                <h3>Diseño Personalizado</h3>
+                <p>¿Tienes una idea? Nosotros la hacemos realidad. Creamos diseños a medida según tu creatividad</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-icon">🚚</div>
+                <h3>Envío Rápido</h3>
+                <p>Entregamos en todo el país en 3-5 días hábiles. Envío gratis en pedidos mayores a $50</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-icon">💎</div>
+                <h3>Tela de Calidad</h3>
+                <p>Utilizamos telas premium 100% poliéster de alta calidad, suaves y cómodas para el uso diario</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section" id="contacto">
+        <div class="cta-box">
+            <h2>¿Quieres un diseño <span class="accent">único</span>?</h2>
+            <p>Suscríbete a nuestro newsletter y recibe un 10% de descuento en tu primer pedido personalizado</p>
+            <div class="cta-input-group">
+                <input type="email" placeholder="Tu correo electrónico" id="newsletterEmail">
+                <button class="btn-primary" onclick="subscribeNewsletter()">Suscribirme</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>SubliStyle</h3>
+                <p>Tu destino para franelas personalizadas con sublimación de alta calidad. Diseños únicos que reflejan
+                    tu personalidad.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">💬</a>
+                    <a href="#" class="social-icon" aria-label="TikTok">🎵</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Tienda</h4>
+                <ul>
+                    <li><a href="#">Nuevos Diseños</a></li>
+                    <li><a href="#">Más Vendidos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Personalizar</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Guía de Tallas</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="#">info@substyle.com</a></li>
+                    <li><a href="#">+58 412-555-7890</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SubliStyle — Todos los derechos reservados. Hecho con 💙 para ti.</p>
+        </div>
+    </footer>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Mi Carrito</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <span class="cart-empty-icon">🛒</span>
+                <p>Tu carrito está vacío</p>
+                <p style="font-size: 0.78rem; margin-top: 5px;">¡Agrega algunas franelas increíbles!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label">Total:</span>
+                <span class="cart-total-price" id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✅</span>
+        <span id="toastMessage">Producto agregado al carrito</span>
+    </div>
+
+    <script>
+        // ===== Particle Background =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.3;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.4 + 0.1;
+                this.color = Math.random() > 0.6 ? '#00b7ff' : '#ffffff';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ===== Navbar Scroll =====
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== Smooth Scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== Stats Counter Animation =====
+        function animateCounter(id, target, suffix = '') {
+            const el = document.getElementById(id);
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                el.textContent = Math.floor(current) + suffix;
+            }, 25);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('stat1', 2500, '+');
+                    animateCounter('stat2', 500, '+');
+                    animateCounter('stat3', 8, '');
+                    statsObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        statsObserver.observe(document.querySelector('.stats-bar'));
+
+        // ===== Intersection Observer for Cards =====
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.product-card, .category-card, .feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            cardObserver.observe(card);
+        });
+
+        // ===== Cart Functionality =====
+        let cart = [];
+
+        function addToCart(id, name, price, image) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ id, name, price, image, qty: 1 });
+            }
+            updateCart();
+            showToast(`"${name}" agregado al carrito`);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    removeFromCart(id);
+                    return;
+                }
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            const countEl = document.getElementById('cartCount');
+            const itemsEl = document.getElementById('cartItems');
+            const totalEl = document.getElementById('cartTotal');
+            const emptyEl = document.getElementById('cartEmpty');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            countEl.textContent = totalItems;
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = `
+                    <div class="cart-empty">
+                        <span class="cart-empty-icon">🛒</span>
+                        <p>Tu carrito está vacío</p>
+                        <p style="font-size: 0.78rem; margin-top: 5px;">¡Agrega algunas franelas increíbles!</p>
+                    </div>`;
+            } else {
+                itemsEl.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+                            <div class="cart-item-qty">
+                                <button class="qty-btn" onclick="updateQty(${item.id}, -1)">−</button>
+                                <span class="qty-value">${item.qty}</span>
+                                <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
+                    </div>
+                `).join('');
+            }
+
+            totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+        }
+
+        // Cart Sidebar Toggle
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            document.getElementById('cartSidebar').classList.add('active');
+            document.getElementById('cartOverlay').classList.add('active');
+        });
+
+        function closeCart() {
+            document.getElementById('cartSidebar').classList.remove('active');
+            document.getElementById('cartOverlay').classList.remove('active');
+        }
+
+        document.getElementById('cartClose').addEventListener('click', closeCart);
+        document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+        // ===== Toast Notification =====
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // ===== Newsletter =====
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email && email.includes('@')) {
+                showToast('¡Gracias por suscribirte! 🎉');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                showToast('Por favor ingresa un email válido');
+            }
+        }
+
+        // ===== Checkout =====
+        function checkout() {
+            if (cart.length === 0) {
+                showToast('Tu carrito está vacío');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            showToast(`¡Pedido de $${total.toFixed(2)} procesado! 🎉`);
+            cart = [];
+            updateCart();
+            closeCart();
+        }
+
+        // ===== Category filter animation =====
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const category = this.dataset.category;
+                showToast(`Categoría: ${this.querySelector('.category-name').textContent}`);
+
+                document.querySelectorAll('.category-card').forEach(c => c.style.borderColor = 'var(--border-light)');
+                this.style.borderColor = 'var(--accent)';
+
+                // Scroll to products
+                document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>
